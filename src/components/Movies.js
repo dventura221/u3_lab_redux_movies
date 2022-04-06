@@ -18,13 +18,13 @@ const Movies = (props) => {
     props.fetchMovies()
   }, [])
 
-  console.log(props.movieState, 'Movie State')
+  console.log('Movie State', props.movieState)
 
   return (
     <div>
       <h1>Movies</h1>
       <div className="movieGrid">
-        {props.movieState.movies.results.map((movie) => (
+        {props.movieState.movies.map((movie) => (
           <ul key={movie.id} className="movieCard">
             <h4>{movie.title}</h4>
             <h5>Release Date: {movie.release_date}</h5>
