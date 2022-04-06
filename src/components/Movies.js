@@ -23,11 +23,20 @@ const Movies = (props) => {
   return (
     <div>
       Movies
-      {props.movieState.movies.results.map((movie) => (
-        <ul key={movie.id}>
-          <h4>{movie.title}</h4>
-        </ul>
-      ))}
+      <div className="movieGrid">
+        {props.movieState.movies.results.map((movie) => (
+          <ul key={movie.id} className="movieCard">
+            <h4>{movie.title}</h4>
+            <h5>Release Date: {movie.release_date}</h5>
+            <h5>Score {movie.vote_average}/10</h5>
+            <img
+              src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+              alt="poster"
+            />
+            <p>Overview: {movie.overview}</p>
+          </ul>
+        ))}
+      </div>
     </div>
   )
 }
