@@ -22,7 +22,7 @@ const Movies = (props) => {
 
   return (
     <div>
-      Movies
+      <h1>Movies</h1>
       <div className="movieGrid">
         {props.movieState.movies.results.map((movie) => (
           <ul key={movie.id} className="movieCard">
@@ -40,5 +40,6 @@ const Movies = (props) => {
     </div>
   )
 }
+//refreshing the app with this map function will break the app somehow, have to comment out/in to get back to work
 
 export default connect(mapStateToProps, mapDispatchToProps)(Movies)
